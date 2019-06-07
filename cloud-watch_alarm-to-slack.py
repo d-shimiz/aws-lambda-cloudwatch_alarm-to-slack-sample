@@ -44,7 +44,7 @@ def lambda_handler(event, context):
         'attachments': [
             {
                 'color': color,
-                'text': "Date: *%s* \n MetricName: *%s* \n AlarmDescription: *%s* \n *%s* *state is now* *%s*\n %s\n" % (statetime, trigger, description, alarm_name, new_state, reason)
+                'text': "Date: *%s* \n MetricName: *%s* \n AlarmDescription: *%s* \n *%s* *state is now* *%s*\n %s\n" % (statetime, metricname, description, alarm_name, new_state, reason)
             }
         ]
     }
