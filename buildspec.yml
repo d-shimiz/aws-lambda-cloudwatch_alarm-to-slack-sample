@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    command:
+      - echo Starting install phase at `date`
+  pre_build: # Before Task
+    commands:
+      - echo Starting pre_build phase at `date`
+  build: # Build Task
+    commands:
+      - echo Build Phase started on `date`
+      - zip cloudwatch-alarm-to-slack-python-x.zip cloudwatch-alarm-to-slack-python-x.py 
+      - aws s3 cp cloudwatch-alarm-to-slack-python-x.zip s3://daisukeshimizu/
+      #- aws lambda update-function-code --function-name cloudwatch-alarm-to-slack-python --zip-file fileb://cloudwatch-alarm-to-slack-python-x.zip
+      #- aws lambda update-function-code --function-name cloudwatch-alarm-to-slack-python --s3-bucket daisukeshimizu --s3-key cloudwatch-alarm-to-slack-python-x.zip
+  post_build: # after Build Task
+    commands:
+      - echo Post Build Phase started on `date`
+#artifacts: # Deliverables
+#  files:
+#    - '**/*'
+#  base-directory: 'coverage'
+
