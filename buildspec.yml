@@ -1,6 +1,6 @@
 phases:
   install:
-
+      - echo Starting install phase at `date`
   pre_build: # Before Task
     commands:
       - echo Starting pre_build phase at `date`
@@ -24,8 +24,8 @@ phases:
   post_build: # after Build Task
     commands:
       - echo Post Build Phase started on `date`
-artifacts: # Deliverables
-  files:
-    - '**/*'
-  base-directory: 'coverage'
+#artifacts: # Deliverables
+#  files:
+#    - '**/*'
+#  base-directory: 'coverage'
 
