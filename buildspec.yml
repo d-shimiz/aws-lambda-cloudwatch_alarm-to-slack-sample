@@ -12,15 +12,15 @@ phases:
   build: # Build Task
     commands:
       - echo Build Phase started on `date`
-      - zip cloudwatch-alarm-to-slack-python-x.zip cloudwatch-alarm-to-slack-python-x.py 
-      - aws s3 cp cloudwatch-alarm-to-slack-python-x.zip s3://daisukeshimizu/
+      - zip lambda_function.zip lambda_function.py
+      - aws s3 cp lambda_function.zip s3://daisukeshimizu/
       #- aws lambda update-function-code --function-name cloudwatch-alarm-to-slack-python --zip-file fileb://cloudwatch-alarm-to-slack-python-x.zip
       #- aws lambda update-function-code --function-name cloudwatch-alarm-to-slack-python --s3-bucket daisukeshimizu --s3-key cloudwatch-alarm-to-slack-python-x.zip
   post_build: # after Build Task
     commands:
       - echo Post Build Phase started on `date`
-artifacts: # Deliverables
-  files:
-    - '**/*'
+#artifacts: # Deliverables
+#  files:
+#    - '**/*'
 #  base-directory: 'coverage'
 
