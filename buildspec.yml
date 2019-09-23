@@ -1,9 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    command:
-      - echo Starting install phase at `date`
+  #install:
+  #  command:
+  #    - echo Starting install phase at `date`
   pre_build: # Before Task
     commands:
       - echo Starting pre_build phase at `date`
