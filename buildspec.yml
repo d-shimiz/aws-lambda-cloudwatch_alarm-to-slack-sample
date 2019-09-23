@@ -19,8 +19,8 @@ phases:
   post_build: # after Build Task
     commands:
       - echo Post Build Phase started on `date`
-#artifacts: # Deliverables
-#  files:
-#    - '**/*'
+artifacts: # Deliverables
+  files:
+    - '**/*'
 #  base-directory: 'coverage'
 
