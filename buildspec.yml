@@ -4,8 +4,8 @@ phases:
   install:
     runtime-versions:
       python: 3.7
-  #  command:
-  #    - echo Starting install phase at `date`
+    command:
+      - echo Starting install phase at `date`
   pre_build: # Before Task
     commands:
       - echo Starting pre_build phase at `date`
